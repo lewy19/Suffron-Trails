@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Suffron Agency</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search destinations..." onkeyup="filterDestinations()">
+</div>
+
+    <!-- Fullscreen Background Video -->
+<div class="video-bg">
+    <video autoplay muted loop playsinline class="video-bg-source">
+        <source src="videos/background-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+    <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254724436255"  target="_blank" class="whatsapp-button">
+    <img src="images/whatsapp.png" alt="Chat on WhatsApp">
+</a>
+
+<!-- Dark/Light Mode Toggle -->
+<button id="theme-toggle">🌙 Dark Mode</button>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Suffron Agency</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="policy.html">Policy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Us Section -->
+<section class="about-section" id="about">
+    <h2>About Suffron Agency Limited</h2>
+    <p>At Suffron Agency Limited, we believe that every journey tells a story — one filled with adventure, discovery, and unforgettable moments. Since our founding in 2015, we’ve helped thousands of travelers experience the world's hidden heartbeats through carefully crafted itineraries and personalized service.</p>
+
+    <h3>Our Mission</h3>
+    <p>To make travel accessible, memorable, and meaningful by connecting people to the cultures, landscapes, and experiences that inspire them most.</p>
+
+    <h3>Our Vision</h3>
+    <p>To become Africa's leading travel agency, recognized for excellence in customer satisfaction, innovation, and sustainable tourism practices.</p>
+
+    <h3>Why Choose Us?</h3>
+    <ul class="features">
+        <li>✅ Affordable packages across Africa and beyond</li>
+        <li>✅ Expert local guides and support teams</li>
+        <li>✅ Hassle-free booking and payment options</li>
+        <li>✅ 24/7 customer support during your trip</li>
+        <li>✅ Eco-friendly and community-focused tours</li>
+    </ul>
+
+    <!-- Customer Reviews -->
+    <h3>What Our Clients Say</h3>
+    <div class="review">
+        <p>
+            “The Kenya Safari was beyond amazing — from the Masai Mara to Watamu Beach, everything was perfectly planned. Suffron Agency made sure we saw it all without any stress.”
+            <br><strong>– Michael & Sarah, United Kingdom</strong>
+        </p>
+    </div>
+
+    <div class="review">
+        <p>
+            “We booked a cultural tour through Tanzania and were blown away by the local guides. We got to experience traditions, food, and music that we never would’ve found on our own!”
+            <br><strong>– Aisha M., Canada</strong>
+        </p>
+    </div>
+
+    <div class="review">
+        <p>
+            “Our trip to Seychelles with Suffron Agency was pure luxury. The accommodations, transport, and guides were top-notch. Highly recommend for a dream vacation.”
+            <br><strong>– Carlos R., Spain</strong>
+        </p>
+    </div>
+</section>
+    <!-- Our Specialization Section -->
+    <section class="specialization-section">
+        <h2>Our Specializations</h2>
+        <div class="specialization-grid">
+            <div class="card">
+                <h3>Safari Adventures</h3>
+                <p>We offer expert-guided safaris in Kenya, Tanzania, South Africa, and more — from budget to luxury.</p>
+            </div>
+            <div class="card">
+                <h3>Beach Escapes</h3>
+                <p>Relax on tropical islands like Seychelles, Zanzibar, and Mauritius with all-inclusive beach holiday packages.</p>
+            </div>
+            <div class="card">
+                <h3>Cultural Tours</h3>
+                <p>Explore rich African heritage through guided cultural tours and immersive village visits.</p>
+            </div>
+            <div class="card">
+                <h3>International Trips</h3>
+                <p>From Europe to Asia, we provide international packages tailored to your interests and budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Suffron Agency Limited | All Rights Reserved</p>
+    </footer>
+    <script>
+    function filterDestinations() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+
+        // Define simple search map
+        const searchMap = {
+            "kenya": "kenya.html",
+            "tanzania": "tanzania.html",
+            "south africa": "south-africa.html",
+            "egypt": "egypt.html",
+            "seychelles": "seychelles.html",
+            "australia": "australia.html",
+            "north america": "north-america.html",
+            "south america": "south-america.html",
+            "europe": "europe.html",
+            "asia": "asia.html",
+            "masai mara": "kenya.html",
+            "zanzibar": "tanzania.html",
+            "cape town": "south-africa.html",
+            "pyramids": "egypt.html",
+            "beach": "seychelles.html",
+            "sydney": "australia.html",
+            "rio de janeiro": "south-america.html",
+            "paris": "europe.html",
+            "tokyo": "asia.html"
+        };
+
+        if (query.length === 0) return;
+
+        for (let key in searchMap) {
+            if (key.includes(query.toLowerCase())) {
+                window.location.href = searchMap[key];
+                return;
+            }
+        }
+
+        // Optional: Show message if no match found
+        // alert("No matching destination found.");
+    }
+</script>
+
+</body>
+</html>

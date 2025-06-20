@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suffron Agency Limited - Discover The World's Hidden Heartbeats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search destinations..." onkeyup="filterDestinations()">
+</div>
+    <!-- Fullscreen Background Video -->
+<div class="video-bg">
+    <video autoplay muted loop playsinline class="video-bg-source">
+        <source src="videos/video 2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+    <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254724436255"  target="_blank" class="whatsapp-button">
+    <img src="images/whatsapp.png" alt="Chat on WhatsApp">
+</a>
+
+    <!-- Dark/Light Mode Toggle -->
+<button id="theme-toggle">🌙 Dark Mode</button>
+
+   <!-- Navigation -->
+<nav>
+    <div class="logo">Suffron Agency</div>
+
+    <!-- Centered Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search destinations..." onkeyup="filterDestinations()">
+    </div>
+    
+    <!-- Nav Links -->
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="policy.html">Policy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+    </ul>
+</nav>
+    <!-- Hero Section with Video Background -->
+<div class="video-bg">
+    <video autoplay muted loop playsinline class="video-bg-source">
+        <source src="videos/home-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- Hero Text Over Video -->
+<section class="hero-text-section">
+    <div class="hero-text">
+        <h1>Discover The World's Hidden Heartbeats</h1>
+        <p>Your journey begins here — explore unforgettable travel experiences across Africa and beyond.</p>
+        <a href="#popular" class="btn-explore">Explore Destinations</a>
+    </div>
+</section>
+
+    
+    <!-- Featured Destinations -->
+    <section class="featured">
+        <h2>Featured Destinations</h2>
+        <div class="destination-grid">
+            <div class="card">
+                <img src="images/kenya.jpg" alt="Kenya">
+                <h3>Kenya</h3>
+                <p>Masai Mara, Nairobi National Park</p>
+                <a href="destinations.html#popular">Explore</a>
+            </div>
+            <div class="card">
+                <img src="images/south-africa.jpg" alt="South Africa">
+                <h3>South Africa</h3>
+                <p>Cape Town, Table Mountain</p>
+                <a href="destinations.html#popular">Explore</a>
+            </div>
+            <div class="card">
+                <img src="images/tanzania.jpg" alt="Tanzania">
+                <h3>Tanzania</h3>
+                <p>Zanzibar, Serengeti</p>
+                <a href="destinations.html#popular">Explore</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Icons -->
+    <section class="social">
+        <a href="#"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Suffron Agency Limited | All Rights Reserved</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+    function filterDestinations() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+
+        // Define simple search map
+        const searchMap = {
+            "kenya": "kenya.html",
+            "tanzania": "tanzania.html",
+            "south africa": "south-africa.html",
+            "egypt": "egypt.html",
+            "seychelles": "seychelles.html",
+            "australia": "australia.html",
+            "north america": "north-america.html",
+            "south america": "south-america.html",
+            "europe": "europe.html",
+            "asia": "asia.html",
+            "masai mara": "kenya.html",
+            "zanzibar": "tanzania.html",
+            "cape town": "south-africa.html",
+            "pyramids": "egypt.html",
+            "beach": "seychelles.html",
+            "sydney": "australia.html",
+            "rio de janeiro": "south-america.html",
+            "paris": "europe.html",
+            "tokyo": "asia.html"
+        };
+
+        if (query.length === 0) return;
+
+        for (let key in searchMap) {
+            if (key.includes(query.toLowerCase())) {
+                window.location.href = searchMap[key];
+                return;
+            }
+        }
+
+        // Optional: Show message if no match found
+        // alert("No matching destination found.");
+    }
+</script>
+
+
+</body>
+</html>

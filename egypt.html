@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Egypt - Suffron Agency</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search destinations..." onkeyup="filterDestinations()">
+</div>
+    <source src="../videos/background-video.mp4" type="video/mp4">
+    <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254724436255"  target="_blank" class="whatsapp-button">
+    <img src="images/whatsapp.png" alt="Chat on WhatsApp">
+</a>
+
+    <!-- Dark/Light Mode Toggle -->
+<button id="theme-toggle">🌙 Dark Mode</button>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Suffron Agency</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../destinations.html">Back to Destinations</a></li>
+        </ul>
+    </nav>
+
+    <!-- Egypt Attractions -->
+    <section class="destinations-section">
+        <h2>Top Attractions in Egypt</h2>
+        <p>Step into ancient history and modern wonder in Egypt.</p>
+
+        <div class="destination-grid">
+
+            <div class="card">
+                <img src="images/pyramids-of-egypt.jpg" alt="Pyramids of Giza">
+                <h3>Pyramids of Giza</h3>
+                <p>Iconic ancient wonder and symbol of Egypt's rich history.</p>
+                <p><strong>From $700</strong></p>
+                <a href="../pricing.html#egypt">Book Now</a>
+            </div>
+
+            <div class="card">
+                <img src="images/nile-river.jpg" alt="The Nile River">
+                <h3>The Nile River</h3>
+                <p>Take a cruise along the world’s longest river and explore ancient temples.</p>
+                <p><strong>From $600</strong></p>
+                <a href="../pricing.html#egypt">Book Now</a>
+            </div>
+
+            <div class="card">
+                <img src="images/red-sea-riviera.jpg" alt="Red Sea Riviera">
+                <h3>Red Sea Riviera</h3>
+                <p>Relax or dive in crystal-clear waters filled with marine life.</p>
+                <p><strong>From $500</strong></p>
+                <a href="../pricing.html#egypt">Book Now</a>
+            </div>
+
+            <div class="card">
+                <img src="images/valley-of-kings.jpg" alt="Valley of the Kings">
+                <h3>Valley of the Kings</h3>
+                <p>Explore tombs of ancient pharaohs in Luxor.</p>
+                <p><strong>From $650</strong></p>
+                <a href="../pricing.html#egypt">Book Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Suffron Agency Limited | All Rights Reserved</p>
+    </footer>
+    <script>
+    function filterDestinations() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+
+        // Define simple search map
+        const searchMap = {
+            "kenya": "kenya.html",
+            "tanzania": "tanzania.html",
+            "south africa": "south-africa.html",
+            "egypt": "egypt.html",
+            "seychelles": "seychelles.html",
+            "australia": "australia.html",
+            "north america": "north-america.html",
+            "south america": "south-america.html",
+            "europe": "europe.html",
+            "asia": "asia.html",
+            "masai mara": "kenya.html",
+            "zanzibar": "tanzania.html",
+            "cape town": "south-africa.html",
+            "pyramids": "egypt.html",
+            "beach": "seychelles.html",
+            "sydney": "australia.html",
+            "rio de janeiro": "south-america.html",
+            "paris": "europe.html",
+            "tokyo": "asia.html"
+        };
+
+        if (query.length === 0) return;
+
+        for (let key in searchMap) {
+            if (key.includes(query.toLowerCase())) {
+                window.location.href = searchMap[key];
+                return;
+            }
+        }
+
+        // Optional: Show message if no match found
+        // alert("No matching destination found.");
+    }
+</script>
+
+</body>
+</html>

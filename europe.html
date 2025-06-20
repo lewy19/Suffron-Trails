@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Europe - Suffron Agency</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search destinations..." onkeyup="filterDestinations()">
+</div>
+    <source src="../videos/background-video.mp4" type="video/mp4">
+ 
+       <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254724436255"  target="_blank" class="whatsapp-button">
+    <img src="images/whatsapp.png" alt="Chat on WhatsApp">
+</a>
+
+    <!-- Dark/Light Mode Toggle -->
+<button id="theme-toggle">🌙 Dark Mode</button>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Suffron Agency</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../destinations.html">Back to Destinations</a></li>
+        </ul>
+    </nav>
+
+    <!-- Europe Attractions -->
+    <section class="destinations-section">
+        <h2>Top Attractions in Europe</h2>
+        <p>From castles to canals, experience Europe's beauty and history.</p>
+
+        <div class="destination-grid">
+
+            <div class="card">
+                <img src="images/amsterdam.jpg" alt="Amsterdam">
+                <h3>Amsterdam</h3>
+                <p>Canals, art museums, and charming Dutch culture.</p>
+                <p><strong>From $350</strong></p>
+                <a href="../pricing.html#europe">Book Now</a>
+            </div>
+
+            <div class="card">
+                <img src="images/switzerland.jpg" alt="Swiss Alps">
+                <h3>Swiss Alps</h3>
+                <p>Snow-covered peaks, skiing, and breathtaking mountain views.</p>
+                <p><strong>From $600</strong></p>
+                <a href="../pricing.html#europe">Book Now</a>
+            </div>
+
+            <div class="card">
+                <img src="images/madeira.jpg" alt="Madeira Islands">
+                <h3>Madeira Islands</h3>
+                <p>Lush green islands with hiking trails and ocean views.</p>
+                <p><strong>From $400</strong></p>
+                <a href="../pricing.html#europe">Book Now</a>
+            </div>
+
+            <div class="card">
+                <img src="images/paris.jpg" alt="Paris">
+                <h3>Paris</h3>
+                <p>Eiffel Tower, Louvre Museum, and romantic city vibes.</p>
+                <p><strong>From $450</strong></p>
+                <a href="../pricing.html#europe">Book Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Suffron Agency Limited | All Rights Reserved</p>
+    </footer>
+    <script>
+    function filterDestinations() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+
+        // Define simple search map
+        const searchMap = {
+            "kenya": "kenya.html",
+            "tanzania": "tanzania.html",
+            "south africa": "south-africa.html",
+            "egypt": "egypt.html",
+            "seychelles": "seychelles.html",
+            "australia": "australia.html",
+            "north america": "north-america.html",
+            "south america": "south-america.html",
+            "europe": "europe.html",
+            "asia": "asia.html",
+            "masai mara": "kenya.html",
+            "zanzibar": "tanzania.html",
+            "cape town": "south-africa.html",
+            "pyramids": "egypt.html",
+            "beach": "seychelles.html",
+            "sydney": "australia.html",
+            "rio de janeiro": "south-america.html",
+            "paris": "europe.html",
+            "tokyo": "asia.html"
+        };
+
+        if (query.length === 0) return;
+
+        for (let key in searchMap) {
+            if (key.includes(query.toLowerCase())) {
+                window.location.href = searchMap[key];
+                return;
+            }
+        }
+
+        // Optional: Show message if no match found
+        // alert("No matching destination found.");
+    }
+</script>
+
+</body>
+</html>

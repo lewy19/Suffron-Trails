@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Tanzania - Suffron Agency</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search destinations..." onkeyup="filterDestinations()">
+</div>
+    <source src="../videos/background-video.mp4" type="video/mp4">
+        <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254724436255"  target="_blank" class="whatsapp-button">
+    <img src="images/whatsapp.png" alt="Chat on WhatsApp">
+</a>
+
+    <!-- Dark/Light Mode Toggle -->
+<button id="theme-toggle">🌙 Dark Mode</button>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Suffron Agency</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../destinations.html">Back to Destinations</a></li>
+        </ul>
+    </nav>
+
+    <!-- Tanzania Attractions -->
+    <section class="destinations-section">
+        <h2>Top Attractions in Tanzania</h2>
+        <p>Experience Tanzania's breathtaking natural beauty and rich culture.</p>
+
+        <div class="destination-grid">
+
+            <div class="card">
+                <img src="images/serengeti.jpg" alt="Serengeti National Park">
+                <h3>Serengeti National Park</h3>
+                <p>Witness one of nature’s greatest spectacles – the wildebeest migration.</p>
+                <p><strong>From $500</strong></p>
+                <a href="../pricing.html#tanzania">Book Now</a>
+            </div>
+
+            <div class="card">
+                <img src="images/zanzibar.jpg" alt="Zanzibar Island">
+                <h3>Zanzibar Island</h3>
+                <p>Historic island known for spice tours, beaches, and Stone Town culture.</p>
+                <p><strong>From $300</strong></p>
+                <a href="../pricing.html#tanzania">Book Now</a>
+            </div>
+
+            <div class="card">
+                <img src="images/mount-kilimanjaro.jpg" alt="Mount Kilimanjaro">
+                <h3>Mount Kilimanjaro</h3>
+                <p>Africa’s tallest mountain offering breathtaking climbs and views.</p>
+                <p><strong>From $600</strong></p>
+                <a href="../pricing.html#tanzania">Book Now</a>
+            </div>
+
+            <div class="card">
+                <img src="images/ngorongoro.jpg" alt="Ngorongoro Crater">
+                <h3>Ngorongoro Crater</h3>
+                <p>One of the most concentrated wildlife areas on Earth.</p>
+                <p><strong>From $350</strong></p>
+                <a href="../pricing.html#tanzania">Book Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Suffron Agency Limited | All Rights Reserved</p>
+    </footer>
+    <script>
+    function filterDestinations() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+
+        // Define simple search map
+        const searchMap = {
+            "kenya": "kenya.html",
+            "tanzania": "tanzania.html",
+            "south africa": "south-africa.html",
+            "egypt": "egypt.html",
+            "seychelles": "seychelles.html",
+            "australia": "australia.html",
+            "north america": "north-america.html",
+            "south america": "south-america.html",
+            "europe": "europe.html",
+            "asia": "asia.html",
+            "masai mara": "kenya.html",
+            "zanzibar": "tanzania.html",
+            "cape town": "south-africa.html",
+            "pyramids": "egypt.html",
+            "beach": "seychelles.html",
+            "sydney": "australia.html",
+            "rio de janeiro": "south-america.html",
+            "paris": "europe.html",
+            "tokyo": "asia.html"
+        };
+
+        if (query.length === 0) return;
+
+        for (let key in searchMap) {
+            if (key.includes(query.toLowerCase())) {
+                window.location.href = searchMap[key];
+                return;
+            }
+        }
+
+        // Optional: Show message if no match found
+        // alert("No matching destination found.");
+    }
+</script>
+
+</body>
+</html>

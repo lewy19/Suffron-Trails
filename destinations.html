@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - Suffron Agency</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Video -->
+<div class="video-bg">
+    <video autoplay muted loop playsinline class="video-bg-source">
+        <source src="videos/destination.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+    <!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search destinations..." onkeyup="filterDestinations()">
+</div>
+    <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254724436255"  target="_blank" class="whatsapp-button">
+    <img src="images/whatsapp.png" alt="Chat on WhatsApp">
+</a>
+
+    <!-- Dark/Light Mode Toggle -->
+<button id="theme-toggle">🌙 Dark Mode</button>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Suffron Agency</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#popular">Popular Destinations</a></li>
+            <li><a href="#international">International Destinations</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="policy.html">Policy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+        </ul>
+    </nav>
+
+    <!-- Popular Destinations Section -->
+    <section id="popular" class="destinations-section">
+        <h2>Popular Destinations in Africa</h2>
+        <p>Explore beautiful and accessible African countries perfect for unforgettable adventures.</p>
+
+        <div class="country-grid">
+
+            <div class="country-card">
+                <img src="images/kenya.jpg" alt="Kenya">
+                <h3>Kenya</h3>
+                <p>Wildlife safaris, beaches, national parks</p>
+                <a href="kenya.html">View Attractions →</a>
+            </div>
+
+            <div class="country-card">
+                <img src="images/tanzania.jpg" alt="Tanzania">
+                <h3>Tanzania</h3>
+                <p>Serengeti, Zanzibar, Kilimanjaro</p>
+                <a href="tanzania.html">View Attractions →</a>
+            </div>
+
+            <div class="country-card">
+                <img src="images/south-africa.jpg" alt="South Africa">
+                <h3>South Africa</h3>
+                <p>Cape Town, Kruger Park, Table Mountain</p>
+                <a href="south-africa.html">View Attractions →</a>
+            </div>
+
+            <div class="country-card">
+                <img src="images/egypt.jpg" alt="Egypt">
+                <h3>Egypt</h3>
+                <p>Pyramids, Nile River, Red Sea</p>
+                <a href="egypt.html">View Attractions →</a>
+            </div>
+
+            <div class="country-card">
+                <img src="images/seychelles.jpg" alt="Seychelles">
+                <h3>Seychelles</h3>
+                <p>Beaches, marine parks, tropical paradise</p>
+                <a href="seychelles.html">View Attractions →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- International Destinations Section -->
+    <section id="international" class="destinations-section">
+        <h2>International Destinations</h2>
+        <p>Travel beyond Africa to some of the world’s most amazing places.</p>
+
+        <div class="country-grid">
+
+            <div class="country-card">
+                <img src="images/australia.jpg" alt="Australia">
+                <h3>Australia</h3>
+                <p>Great Barrier Reef, Sydney, Uluru</p>
+                <a href="australia.html">View Attractions →</a>
+            </div>
+
+            <div class="country-card">
+                <img src="images/north-america.jpg" alt="North America">
+                <h3>North America</h3>
+                <p>New York, Toronto, Alaska</p>
+                <a href="north-america.html">View Attractions →</a>
+            </div>
+
+            <div class="country-card">
+                <img src="images/south-america.jpg" alt="South America">
+                <h3>South America</h3>
+                <p>Brazil, Peru, Argentina</p>
+                <a href="south-america.html">View Attractions →</a>
+            </div>
+
+            <div class="country-card">
+                <img src="images/europe.jpg" alt="Europe">
+                <h3>Europe</h3>
+                <p>Switzerland, Amsterdam, Madeira</p>
+                <a href="europe.html">View Attractions →</a>
+            </div>
+
+            <div class="country-card">
+                <img src="images/china.jpg" alt="Asia">
+                <h3>Asia</h3>
+                <p>China, Thailand, Hong Kong</p>
+                <a href="asia.html">View Attractions →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Suffron Agency Limited | All Rights Reserved</p>
+    </footer>
+    <script>
+    function filterDestinations() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+
+        // Define simple search map
+        const searchMap = {
+            "kenya": "kenya.html",
+            "tanzania": "tanzania.html",
+            "south africa": "south-africa.html",
+            "egypt": "egypt.html",
+            "seychelles": "seychelles.html",
+            "australia": "australia.html",
+            "north america": "north-america.html",
+            "south america": "south-america.html",
+            "europe": "europe.html",
+            "asia": "asia.html",
+            "masai mara": "kenya.html",
+            "zanzibar": "tanzania.html",
+            "cape town": "south-africa.html",
+            "pyramids": "egypt.html",
+            "beach": "seychelles.html",
+            "sydney": "australia.html",
+            "rio de janeiro": "south-america.html",
+            "paris": "europe.html",
+            "tokyo": "asia.html"
+        };
+
+        if (query.length === 0) return;
+
+        for (let key in searchMap) {
+            if (key.includes(query.toLowerCase())) {
+                window.location.href = searchMap[key];
+                return;
+            }
+        }
+
+        // Optional: Show message if no match found
+        // alert("No matching destination found.");
+    }
+</script>
+
+</body>
+</html>
